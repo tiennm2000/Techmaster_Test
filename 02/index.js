@@ -21,6 +21,7 @@ function extractTextFromSsml() {
       console.log(result.speak.voice);
       const content = result.speak.voice
         .map((voice) => {
+          //thêm nhãn A: hoặc B: trước mỗi đoạn text tương ứng với giọng A hoặc B
           const text =
             voice.$.name === "en-US-AndrewMultilingualNeural" ? "A: " : "B: ";
           return text + voice._;
