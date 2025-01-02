@@ -18,7 +18,7 @@ const highlightIndexWord = ref(-1); // Lưu index của từ đang được high
 // Load dữ liệu từ file
 const loadData = async () => {
   //đọc file output_AB.txt
-  let lines = await fetch("/src/assets/output_AB.txt");
+  let lines = await fetch("output_AB.txt");
   lines = await lines.text();
   lines = lines.split("\n");
 
@@ -55,7 +55,7 @@ const loadData = async () => {
   dialogue.value = lines;
 
   // Lấy thời gian bắt đầu và thời lượng từ file timestamp.txt
-  let fetchedTimestamps = await fetch("/src/assets/timestamp.txt");
+  let fetchedTimestamps = await fetch("timestamp.txt");
   fetchedTimestamps = await fetchedTimestamps.text();
   fetchedTimestamps = fetchedTimestamps
     .split("\n")
