@@ -1,12 +1,15 @@
 <template>
   <div>
+    <!-- render ra từng dòng trong đoạn hội thoại -->
     <p
       v-for="(line, index) in dialogue"
       :key="index"
       :class="`speaker-${line.speaker}`"
     >
       <span :class="{ 'has-space': true }">{{ line.speaker }}</span>
+      <!--tên người nói-->
       <span :class="{ 'has-space': true }">:</span>
+      <!-- render ra từng từ trong dòng hội thoại -->
       <span v-for="(word, index) in line.words" :key="index">
         <span
           :class="{

@@ -71,6 +71,7 @@ const loadData = async () => {
   });
 };
 
+//gọi ham load data khi component được tạo
 loadData();
 
 // lấy thời gian hiện tại của audio
@@ -83,8 +84,7 @@ const updateCurrentTime = (currentTime) => {
       currentTime * 1000 <= timestamp.start + timestamp.duration
     ) {
       //lưu index của từ đang được highlight
-      console.log(timestamp.index);
-      console.log(currentTime);
+
       highlightIndexWord.value = timestamp.index;
     }
   });
