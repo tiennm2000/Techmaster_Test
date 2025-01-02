@@ -12,7 +12,7 @@ fs.readFile("timestamp.json", "utf8", (err, data) => {
     .map((item) => {
       return JSON.stringify(item);
     })
-    .join(",\n");
+    .join("\n");
   fs.writeFile("timestamp.txt", result, (err) => {
     if (err) {
       console.error(err);
