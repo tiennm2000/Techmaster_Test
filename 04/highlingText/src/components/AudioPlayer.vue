@@ -33,7 +33,7 @@ const updateCurrentTime = () => {
 // Hàm gọi mỗi khi bắt đầu phát âm thanh
 const onPlay = () => {
   // Kiểm tra thời gian mỗi 10ms
-  intervalId = setInterval(updateCurrentTime, 1); // Cập nhật mỗi 10ms
+  intervalId = setInterval(updateCurrentTime, 10); // Cập nhật mỗi 10ms
 };
 
 // Hàm gọi mỗi khi dừng phát âm thanh
