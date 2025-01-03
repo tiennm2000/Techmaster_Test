@@ -6,6 +6,7 @@
       controls
       @play="onPlay"
       @pause="onPause"
+      @input="onSliderChange"
     ></audio>
   </div>
 </template>
@@ -36,7 +37,13 @@ const onPlay = () => {
   intervalId = setInterval(updateCurrentTime, 10); // Cập nhật mỗi 10ms
 };
 
-// Hàm gọi mỗi khi dừng phát âm thanh
+// Hàm gọi khi slider thay đổi
+const onSliderChange = () => {
+  console.log("slider change");
+  emit("update-time", audioElement.value.currentTime); // Gửi thời gian cho component cha khi slider thay đổi
+};
+
+//Hàm gọi mỗi khi dừng phát âm thanh
 const onPause = () => {
   clearInterval(intervalId); // Dừng khi audio tạm dừng
 };
